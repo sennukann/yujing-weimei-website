@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系方式 - 宇晶味美株式会社</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>宇晶味美</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="products.html">产品</a></li>
+                <li><a href="team.html">团队</a></li>
+                <li><a href="contact.html" class="active">联系</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英文导航栏 -->
+    <nav class="navbar-en">
+        <div class="container">
+            <div class="logo-en">Yujing Weimei Co., Ltd.</div>
+        </div>
+    </nav>
+
+    <!-- 页面标题 -->
+    <section class="page-header">
+        <h1>联系我们</h1>
+        <p>随时准备为您服务</p>
+    </section>
+
+    <!-- 联系方式 -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- 联系信息 -->
+                <div class="contact-info">
+                    <h2>联系信息</h2>
+                    
+                    <div class="info-item">
+                        <h3>📍 公司地址</h3>
+                        <p>日本东京都千代田区丸之内1-1-1<br>
+                        宇晶味美大厦 5楼</p>
+                    </div>
+
+                    <div class="info-item">
+                        <h3>📧 电子邮件</h3>
+                        <p>
+                            <strong>主邮箱:</strong> info@yujing-weimei.com<br>
+                            <strong>销售:</strong> sales@yujing-weimei.com<br>
+                            <strong>市场:</strong> marketing@yujing-weimei.com<br>
+                            <strong>支持:</strong> support@yujing-weimei.com
+                        </p>
+                    </div>
+
+                    <div class="info-item">
+                        <h3>📱 电话</h3>
+                        <p>
+                            <strong>主线:</strong> +81-3-XXXX-XXXX<br>
+                            <strong>国际:</strong> +81-XX-XXXX-XXXX<br>
+                            <strong>传真:</strong> +81-3-XXXX-XXXX
+                        </p>
+                    </div>
+
+                    <div class="info-item">
+                        <h3>🕐 营业时间</h3>
+                        <p>
+                            <strong>周一至周五:</strong> 09:00 - 18:00<br>
+                            <strong>周六:</strong> 09:00 - 13:00<br>
+                            <strong>周日/节假日:</strong> 休息
+                        </p>
+                    </div>
+
+                    <div class="social-links">
+                        <h3>社交媒体</h3>
+                        <p>
+                            <a href="#" class="social-btn">Facebook</a>
+                            <a href="#" class="social-btn">Twitter</a>
+                            <a href="#" class="social-btn">LinkedIn</a>
+                            <a href="#" class="social-btn">WeChat</a>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 联系表单 -->
+                <div class="contact-form-wrapper">
+                    <h2>发送消息</h2>
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">姓名 *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">电子邮件 *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">电话</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company">公司名称</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">主题 *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">-- 选择主题 --</option>
+                                <option value="products">产品查询</option>
+                                <option value="bulk">大批采购</option>
+                                <option value="partnership">商务合作</option>
+                                <option value="jobs">招聘信息</option>
+                                <option value="support">技术支持</option>
+                                <option value="other">其他</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">消息 *</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="checkbox">
+                                <input type="checkbox" name="agree" required>
+                                我同意隐私政策
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">发送消息</button>
+                        <p class="form-note" id="formNote" style="display: none;"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 常见问题 -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>常见问题</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h3>❓ 配送需要多长时间？</h3>
+                    <p>根据目的地不同，通常需要 7-21 个工作日。详情请查询跟踪信息。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>❓ 支持哪些付款方式？</h3>
+                    <p>我们支持信用卡、银行转账、PayPal 等多种支付方式。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>❓ 产品保修期是多长？</h3>
+                    <p>大多数产品享受 1 年的质量保证。特定产品可能有不同的保修期。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>❓ 如何进行大批采购？</h3>
+                    <p>请联系我们的销售团队，获取专属的批发价格和定制服务。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>❓ 可以退货吗？</h3>
+                    <p>在收货后 30 天内，符合条件的产品可以退货或换货。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>❓ 提供订制服务吗？</h3>
+                    <p>是的，我们可以根据您的需求提供定制化的产品和服务。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>宇晶味美株式会社</h4>
+                    <p>日本商品全球贸易先驱</p>
+                </div>
+                <div class="footer-section">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="products.html">产品</a></li>
+                        <li><a href="team.html">团队</a></li>
+                        <li><a href="contact.html">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>联系方式</h4>
+                    <p>电子邮件: info@yujing-weimei.com</p>
+                    <p>电话: +81-XX-XXXX-XXXX</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 宇晶味美株式会社. 版权所有。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

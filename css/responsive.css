@@ -1,0 +1,363 @@
+/* ========== 平板设备 (768px 及以下) ========== */
+@media (max-width: 768px) {
+    /* 导航栏 */
+    .navbar .container {
+        padding: 1rem 15px;
+    }
+
+    .nav-menu {
+        gap: 1rem;
+    }
+
+    .nav-menu a {
+        font-size: 0.9rem;
+    }
+
+    /* 英雄部分 */
+    .hero {
+        padding: 60px 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    /* 关于部分 */
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    /* 产品网格 */
+    .products-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+    }
+
+    /* 标题 */
+    .about h2,
+    .featured-products h2,
+    .team-section h2,
+    .team-values h2,
+    .contact-section h2,
+    .faq-section h2,
+    .products-section h2,
+    .page-header h1,
+    .why-us h2,
+    .join-us h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    /* 页面标题 */
+    .page-header {
+        padding: 40px 20px;
+    }
+
+    .page-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .page-header p {
+        font-size: 1rem;
+    }
+
+    /* 团队网格 */
+    .team-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+
+    /* 联系网格 */
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    /* 常见问题 */
+    .faq-list {
+        grid-template-columns: 1fr;
+    }
+
+    /* 页脚 */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    /* 间距 */
+    .about,
+    .featured-products,
+    .team-section,
+    .team-values,
+    .contact-section,
+    .faq-section,
+    .products-section,
+    .why-us,
+    .join-us {
+        padding: 40px 20px;
+    }
+}
+
+/* ========== 手机设备 (480px 及以下) ========== */
+@media (max-width: 480px) {
+    /* 导航栏 */
+    .navbar .container {
+        padding: 0.8rem 10px;
+    }
+
+    .logo h1 {
+        font-size: 1.2rem;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: #f8f9fa;
+        flex-direction: column;
+        gap: 0;
+        list-style: none;
+        padding: 1rem 0;
+        border-bottom: 1px solid #e9ecef;
+        width: 100%;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu li {
+        padding: 0.5rem 1rem;
+        border-bottom: 1px solid #e9ecef;
+    }
+
+    .nav-menu a {
+        font-size: 1rem;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    /* 英文导航 */
+    .logo-en {
+        font-size: 0.8rem;
+    }
+
+    /* 英雄部分 */
+    .hero {
+        padding: 40px 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .btn {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+    }
+
+    /* 标题 */
+    .about h2,
+    .featured-products h2,
+    .team-section h2,
+    .team-values h2,
+    .contact-section h2,
+    .faq-section h2,
+    .products-section h2,
+    .page-header h1,
+    .why-us h2,
+    .join-us h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* 页面标题 */
+    .page-header {
+        padding: 30px 15px;
+    }
+
+    .page-header h1 {
+        font-size: 1.3rem;
+    }
+
+    .page-header p {
+        font-size: 0.9rem;
+    }
+
+    /* 产品网格 */
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .product-card,
+    .product-item,
+    .team-member,
+    .value,
+    .reason,
+    .feature {
+        padding: 1.2rem;
+    }
+
+    .product-image {
+        font-size: 2rem;
+    }
+
+    .member-avatar {
+        font-size: 2rem;
+    }
+
+    /* 关于部分 */
+    .about-features {
+        gap: 1rem;
+    }
+
+    .about-text p {
+        font-size: 1rem;
+    }
+
+    /* 团队网格 */
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    /* 值网格 */
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* 原因网格 */
+    .reasons-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* 联系网格 */
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info {
+        padding: 1.2rem;
+    }
+
+    .info-item {
+        margin-bottom: 1.5rem;
+    }
+
+    .contact-form-wrapper {
+        padding: 1.2rem;
+    }
+
+    .contact-form-wrapper h2 {
+        font-size: 1.3rem;
+    }
+
+    .social-btn {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+        margin-right: 0.3rem;
+    }
+
+    /* 常见问题 */
+    .faq-list {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .faq-item {
+        padding: 1.2rem;
+    }
+
+    .faq-item h3 {
+        font-size: 1rem;
+    }
+
+    .faq-item p {
+        font-size: 0.9rem;
+    }
+
+    /* 页脚 */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .footer-section h4 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .footer-section p,
+    .footer-section a {
+        font-size: 0.9rem;
+    }
+
+    .footer {
+        padding: 1.5rem 15px 0.5rem;
+    }
+
+    .footer-bottom {
+        font-size: 0.85rem;
+        padding-top: 0.5rem;
+    }
+
+    /* 间距 */
+    .about,
+    .featured-products,
+    .team-section,
+    .team-values,
+    .contact-section,
+    .faq-section,
+    .products-section,
+    .why-us,
+    .join-us {
+        padding: 30px 15px;
+    }
+
+    .product-category h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.8rem;
+    }
+}
+
+/* ========== 超小屏幕 (360px 及以下) ========== */
+@media (max-width: 360px) {
+    .logo h1 {
+        font-size: 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 1.2rem;
+    }
+
+    .hero-content p {
+        font-size: 0.85rem;
+    }
+
+    .nav-menu li {
+        padding: 0.3rem 0.5rem;
+    }
+
+    .btn {
+        padding: 8px 20px;
+        font-size: 0.85rem;
+    }
+}
