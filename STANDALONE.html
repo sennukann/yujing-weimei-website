@@ -1,0 +1,1553 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宇晶味美株式会社 - 日本商品全球贸易</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ========== 导航栏 ========== */
+        .navbar {
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 20px;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: #007bff;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            transition: 0.3s;
+        }
+
+        /* 英文导航栏 */
+        .navbar-en {
+            background-color: #fff;
+            border-bottom: 1px solid #f0f0f0;
+            padding: 0.5rem 0;
+        }
+
+        .navbar-en .container {
+            padding: 0.5rem 20px;
+        }
+
+        .logo-en {
+            color: #666;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        /* ========== 英雄部分 ========== */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            padding: 120px 20px;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        /* ========== 按钮 ========== */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            color: #fff;
+        }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+            transform: translateY(-2px);
+        }
+
+        /* ========== 关于部分 ========== */
+        .about, .featured-products, .team-section, .team-values, .contact-section, .faq-section, .products-section, .why-us, .join-us {
+            padding: 80px 20px;
+        }
+
+        .about {
+            background-color: #f8f9fa;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .about-features {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .feature {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .feature h3 {
+            color: #007bff;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ========== 产品部分 ========== */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .product-card {
+            background: #fff;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-image {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-card h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* ========== 页面 ========== */
+        .page-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-header p {
+            font-size: 1.1rem;
+        }
+
+        /* ========== 产品分类 ========== */
+        .product-category {
+            margin-bottom: 4rem;
+        }
+
+        .product-category h3 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #007bff;
+        }
+
+        .product-item {
+            background: #fff;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .product-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-item h4 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-item p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-tag {
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* ========== 为什么选择我们 ========== */
+        .why-us {
+            background-color: #f8f9fa;
+        }
+
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .reason {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .reason h3 {
+            color: #007bff;
+            margin-bottom: 1rem;
+        }
+
+        /* ========== 团队部分 ========== */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .team-member {
+            background: #fff;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .member-avatar {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .team-member h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .position {
+            color: #007bff;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .description {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact {
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .value {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid #007bff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .value h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        /* ========== 加入我们 ========== */
+        .join-us {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            text-align: center;
+        }
+
+        .join-us h2 {
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .join-us p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        /* ========== 联系部分 ========== */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .info-item {
+            margin-bottom: 2rem;
+        }
+
+        .info-item h3 {
+            color: #007bff;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-item p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .social-links {
+            margin-top: 2rem;
+        }
+
+        .social-btn {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .social-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* ========== 联系表单 ========== */
+        .contact-form-wrapper {
+            background: #fff;
+            border: 1px solid #e9ecef;
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .contact-form-wrapper h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: left;
+            color: #2c3e50;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            color: #2c3e50;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 0.75rem;
+            border: 1px solid #e9ecef;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .checkbox {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .checkbox input[type="checkbox"] {
+            margin-right: 0.5rem;
+        }
+
+        .form-note {
+            text-align: center;
+            padding: 1rem;
+            border-radius: 5px;
+        }
+
+        .form-note.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .form-note.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        /* ========== 常见问题 ========== */
+        .faq-section {
+            background-color: #f8f9fa;
+        }
+
+        .faq-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .faq-item {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #007bff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-item h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-item p {
+            color: #666;
+        }
+
+        /* ========== 页脚 ========== */
+        .footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 3rem 20px 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p {
+            color: #bdc3c7;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #fff;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1rem;
+            border-top: 1px solid #34495e;
+            color: #95a5a6;
+        }
+
+        /* ========== 文本工具类 ========== */
+        .text-center {
+            text-align: center;
+        }
+
+        /* ========== 响应式设计 ========== */
+        @media (max-width: 768px) {
+            .nav-menu {
+                gap: 1rem;
+            }
+
+            .nav-menu a {
+                font-size: 0.9rem;
+            }
+
+            .hero {
+                padding: 60px 20px;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+
+            .page-header {
+                padding: 40px 20px;
+            }
+
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .team-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .faq-list {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .about, .featured-products, .team-section, .team-values, .contact-section, .faq-section, .products-section, .why-us, .join-us {
+                padding: 40px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar .container {
+                padding: 0.8rem 10px;
+            }
+
+            .logo h1 {
+                font-size: 1.2rem;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background-color: #f8f9fa;
+                flex-direction: column;
+                gap: 0;
+                list-style: none;
+                padding: 1rem 0;
+                border-bottom: 1px solid #e9ecef;
+                width: 100%;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .nav-menu li {
+                padding: 0.5rem 1rem;
+                border-bottom: 1px solid #e9ecef;
+            }
+
+            .nav-menu a {
+                font-size: 1rem;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .logo-en {
+                font-size: 0.8rem;
+            }
+
+            .hero {
+                padding: 40px 15px;
+            }
+
+            .hero-content h1 {
+                font-size: 1.5rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .hero-content p {
+                font-size: 0.9rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .btn {
+                padding: 10px 25px;
+                font-size: 0.9rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .page-header {
+                padding: 30px 15px;
+            }
+
+            .page-header h1 {
+                font-size: 1.3rem;
+            }
+
+            .page-header p {
+                font-size: 0.9rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .product-card, .product-item, .team-member, .value, .reason, .feature {
+                padding: 1.2rem;
+            }
+
+            .product-image {
+                font-size: 2rem;
+            }
+
+            .member-avatar {
+                font-size: 2rem;
+            }
+
+            .about-features {
+                gap: 1rem;
+            }
+
+            .about-text p {
+                font-size: 1rem;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .reasons-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                padding: 1.2rem;
+            }
+
+            .info-item {
+                margin-bottom: 1.5rem;
+            }
+
+            .contact-form-wrapper {
+                padding: 1.2rem;
+            }
+
+            .contact-form-wrapper h2 {
+                font-size: 1.3rem;
+            }
+
+            .social-btn {
+                padding: 6px 12px;
+                font-size: 0.85rem;
+                margin-right: 0.3rem;
+            }
+
+            .faq-list {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .faq-item {
+                padding: 1.2rem;
+            }
+
+            .faq-item h3 {
+                font-size: 1rem;
+            }
+
+            .faq-item p {
+                font-size: 0.9rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            .footer-section h4 {
+                font-size: 1rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .footer-section p, .footer-section a {
+                font-size: 0.9rem;
+            }
+
+            .footer {
+                padding: 1.5rem 15px 0.5rem;
+            }
+
+            .footer-bottom {
+                font-size: 0.85rem;
+                padding-top: 0.5rem;
+            }
+
+            .about, .featured-products, .team-section, .team-values, .contact-section, .faq-section, .products-section, .why-us, .join-us {
+                padding: 30px 15px;
+            }
+
+            .product-category h3 {
+                font-size: 1.3rem;
+                margin-bottom: 1.5rem;
+                padding-bottom: 0.8rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .logo h1 {
+                font-size: 1rem;
+            }
+
+            .hero-content h1 {
+                font-size: 1.2rem;
+            }
+
+            .hero-content p {
+                font-size: 0.85rem;
+            }
+
+            .nav-menu li {
+                padding: 0.3rem 0.5rem;
+            }
+
+            .btn {
+                padding: 8px 20px;
+                font-size: 0.85rem;
+            }
+        }
+
+        .page-content {
+            display: none;
+        }
+
+        .page-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>宇晶味美</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a onclick="showPage('home')" class="nav-link active">首页</a></li>
+                <li><a onclick="showPage('products')" class="nav-link">产品</a></li>
+                <li><a onclick="showPage('team')" class="nav-link">团队</a></li>
+                <li><a onclick="showPage('contact')" class="nav-link">联系</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英文导航栏 -->
+    <nav class="navbar-en">
+        <div class="container">
+            <div class="logo-en">Yujing Weimei Co., Ltd.</div>
+        </div>
+    </nav>
+
+    <!-- ========== 首页 ========== -->
+    <div id="home" class="page-content active">
+        <!-- 主横幅 -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>日本商品全球贸易</h1>
+                <p>连接优质日本商品与世界市场</p>
+                <a onclick="showPage('products')" class="btn btn-primary">探索产品</a>
+            </div>
+        </section>
+
+        <!-- 关于我们 -->
+        <section class="about">
+            <div class="container">
+                <h2>关于我们</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>宇晶味美株式会社致力于为全球客户提供最优质的日本商品。我们与日本顶级制造商合作，确保每一件产品都符合国际质量标准。</p>
+                        <p>我们的使命是架起日本与世界之间的贸易桥梁，让全球消费者都能享受到正宗的日本产品。</p>
+                    </div>
+                    <div class="about-features">
+                        <div class="feature">
+                            <h3>✓ 品质保证</h3>
+                            <p>严格的质量控制流程</p>
+                        </div>
+                        <div class="feature">
+                            <h3>✓ 全球配送</h3>
+                            <p>覆盖全球主要市场</p>
+                        </div>
+                        <div class="feature">
+                            <h3>✓ 专业团队</h3>
+                            <p>经验丰富的贸易专家</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 特色产品 -->
+        <section class="featured-products">
+            <div class="container">
+                <h2>特色产品</h2>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image">🍜</div>
+                        <h3>传统食品</h3>
+                        <p>地道日本食材与传统美食</p>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">🎨</div>
+                        <h3>工艺品</h3>
+                        <p>精美的日本手工艺品</p>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">📱</div>
+                        <h3>电子产品</h3>
+                        <p>先进的日本科技产品</p>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">👔</div>
+                        <h3>服装饰品</h3>
+                        <p>高质量的日本服饰与配饰</p>
+                    </div>
+                </div>
+                <div class="text-center" style="margin-top: 40px;">
+                    <a onclick="showPage('products')" class="btn btn-secondary">查看全部产品</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ========== 产品页 ========== -->
+    <div id="products" class="page-content">
+        <section class="page-header">
+            <h1>我们的产品</h1>
+            <p>精选高质量的日本商品</p>
+        </section>
+
+        <section class="products-section">
+            <div class="container">
+                <h2>产品分类</h2>
+                
+                <!-- 传统食品 -->
+                <div class="product-category">
+                    <h3>🍜 传统食品</h3>
+                    <div class="products-grid">
+                        <div class="product-item">
+                            <div class="product-icon">🍚</div>
+                            <h4>日本米</h4>
+                            <p>优质日本大米，口感软糯，营养丰富</p>
+                            <span class="product-tag">热销</span>
+                        </div>
+                        <div class="product-item">
+                            <div class="product-icon">🍜</div>
+                            <h4>拉面系列</h4>
+                            <p>正宗日本拉面，多种口味选择</p>
+                            <span class="product-tag">新品</span>
+                        </div>
+                        <div class="product-item">
+                            <div class="product-icon">🍱</div>
+                            <h4>便当盒套装</h4>
+                            <p>日本传统便当盒，精美设计</p>
+                            <span class="product-tag">推荐</span>
+                        </div>
+                        <div class="product-item">
+                            <div class="product-icon">🧂</div>
+                            <h4>调味料</h4>
+                            <p>日本传统调味料，增添风味</p>
+                            <span class="product-tag">热销</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 工艺品 -->
+                <div class="product-category">
+                    <h3>🎨 工艺品</h3>
+                    <div class="products-grid">
+                        <div class="product-item">
+                            <div class="product-icon">🏺</div>
+                            <h4>陶瓷工艺品</h4>
+                            <p>手工陶瓷制品，工艺精细</p>
+                            <span class="product-tag">艺术</span>
+                        </div>
+                        <div class="product-item">
+                            <div class="product-icon">🖼️</div>
+                            <h4>书法艺术品</h4>
+                            <p>传统日本书法，文化气息浓厚</p>
+                            <span class="product-tag">艺术</span>
+                        </div>
+                        <div class="product-item">
+                            <div class="product-icon">🎎</div>
+                            <h4>传统灯饰</h4>
+                            <p>日本传统灯饰，营造温馨氛围</p>
+                            <span class="product-tag">装饰</span>
+                        </div>
+                        <div class="product-item">
+                            <div class="product-icon">🛴</div>
+                            <h4>木制工艺</h4>
+                            <p>精美的日本木制品，天然环保</p>
+                            <span class="product-tag">环保</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 电子产品 -->
+                <div class="product-category">
+                    <h3>📱 电子产品</h3>
+                    <div class="products-grid">
+                        <div class="product-item">
+                            <div class="product-icon">📱</div>
+                            <h4>智能设备</h4>
+                            <p>最新的日本智能科技产品</p>
+                            <span class="product-tag">科技</span>
+                        </div>
+                        <div class="product-item">
+                            <div class="product-icon">⌚</div>
+                            <h4>精密手表</h4>
+                            <p>日本品牌精密手表，精准可靠</p>
+                            <span class="product-tag">奢侈</span>
+                        </div>
+                        <div class="product-item">
+                            <div class="product-icon">🎧</div>
+                            <h4>音频设备</h4>
+                            <p>高保真音频设备，音质卓越</p>
+                            <span class="product-tag">科技</span>
+                        </div>
+                        <div class="product-item">
+                            <div class="product-icon">📷</div>
+                            <h4>相机设备</h4>
+                            <p>专业级相机和配件</p>
+                            <span class="product-tag">专业</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 服装饰品 -->
+                <div class="product-category">
+                    <h3>👔 服装饰品</h3>
+                    <div class="products-grid">
+                        <div class="product-item">
+                            <div class="product-icon">👘</div>
+                            <h4>和服</h4>
+                            <p>传统日本和服，优雅迷人</p>
+                            <span class="product-tag">传统</span>
+                        </div>
+                        <div class="product-item">
+                            <div class="product-icon">👜</div>
+                            <h4>手工包包</h4>
+                            <p>精心设计的日本手工包包</p>
+                            <span class="product-tag">设计</span>
+                        </div>
+                        <div class="product-item">
+                            <div class="product-icon">✨</div>
+                            <h4>珠宝饰品</h4>
+                            <p>精致的日本珠宝设计</p>
+                            <span class="product-tag">奢侈</span>
+                        </div>
+                        <div class="product-item">
+                            <div class="product-icon">👟</div>
+                            <h4>鞋类产品</h4>
+                            <p>高品质日本鞋类，舒适耐穿</p>
+                            <span class="product-tag">热销</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 为什么选择我们 -->
+        <section class="why-us">
+            <div class="container">
+                <h2>为什么选择我们</h2>
+                <div class="reasons-grid">
+                    <div class="reason">
+                        <h3>✓ 正宗保证</h3>
+                        <p>所有产品均直接从日本进口，100% 正宗</p>
+                    </div>
+                    <div class="reason">
+                        <h3>✓ 质量优先</h3>
+                        <p>严格的质量检测，确保每件产品完美</p>
+                    </div>
+                    <div class="reason">
+                        <h3>✓ 竞争价格</h3>
+                        <p>直接采购，为您提供最优的价格</p>
+                    </div>
+                    <div class="reason">
+                        <h3>✓ 快速配送</h3>
+                        <p>全球配送，快速安全地送到您手中</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ========== 团队页 ========== -->
+    <div id="team" class="page-content">
+        <section class="page-header">
+            <h1>我们的团队</h1>
+            <p>专业、充满激情的国际贸易专家</p>
+        </section>
+
+        <section class="team-section">
+            <div class="container">
+                <h2>核心团队成员</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-avatar">👨‍💼</div>
+                        <h3>田中健司</h3>
+                        <p class="position">首席执行官 (CEO)</p>
+                        <p class="description">拥有 20+ 年的日本贸易经验，致力于打造国际贸易平台</p>
+                        <p class="contact">📧 tanaka@yujing-weimei.com</p>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-avatar">👩‍💼</div>
+                        <h3>佐藤香美</h3>
+                        <p class="position">市场总监</p>
+                        <p class="description">全球市场营销专家，负责品牌推广和市场扩展</p>
+                        <p class="contact">📧 sato@yujing-weimei.com</p>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-avatar">🎓</div>
+                        <h3>山田太郎</h3>
+                        <p class="position">产品采购部主管</p>
+                        <p class="description">与日本顶级制造商建立紧密合作，确保产品质量</p>
+                        <p class="contact">📧 yamada@yujing-weimei.com</p>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-avatar">🚚</div>
+                        <h3>铃木隆一</h3>
+                        <p class="position">物流与供应链总监</p>
+                        <p class="description">负责全球配送和供应链管理，确保及时交付</p>
+                        <p class="contact">📧 suzuki@yujing-weimei.com</p>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-avatar">💼</div>
+                        <h3>伊藤美栾</h3>
+                        <p class="position">国际业务部主管</p>
+                        <p class="description">管理国际合作关系，拓展全球市场</p>
+                        <p class="contact">📧 ito@yujing-weimei.com</p>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-avatar">💻</div>
+                        <h3>渡边大辅</h3>
+                        <p class="position">技术总监</p>
+                        <p class="description">负责IT基础设施和数字化转型</p>
+                        <p class="contact">📧 watanabe@yujing-weimei.com</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="team-values">
+            <div class="container">
+                <h2>我们的价值观</h2>
+                <div class="values-grid">
+                    <div class="value">
+                        <h3>诚信</h3>
+                        <p>以诚信为基础，与合作伙伴建立长期关系</p>
+                    </div>
+                    <div class="value">
+                        <h3>创新</h3>
+                        <p>持续创新，为客户提供更好的服务和产品</p>
+                    </div>
+                    <div class="value">
+                        <h3>卓越</h3>
+                        <p>追求卓越，确保每个细节都完美</p>
+                    </div>
+                    <div class="value">
+                        <h3>合作</h3>
+                        <p>与全球伙伴合作，共同成长</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="join-us">
+            <div class="container">
+                <h2>加入我们</h2>
+                <p>我们正在寻找充满激情和才华的人才加入我们的团队</p>
+                <a onclick="showPage('contact')" class="btn btn-primary">投递简历</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- ========== 联系页 ========== -->
+    <div id="contact" class="page-content">
+        <section class="page-header">
+            <h1>联系我们</h1>
+            <p>随时准备为您服务</p>
+        </section>
+
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-grid">
+                    <!-- 联系信息 -->
+                    <div class="contact-info">
+                        <h2>联系信息</h2>
+                        
+                        <div class="info-item">
+                            <h3>📍 公司地址</h3>
+                            <p>日本东京都千代田区丸之内1-1-1<br>
+                            宇晶味美大厦 5楼</p>
+                        </div>
+
+                        <div class="info-item">
+                            <h3>📧 电子邮件</h3>
+                            <p>
+                                <strong>主邮箱:</strong> info@yujing-weimei.com<br>
+                                <strong>销售:</strong> sales@yujing-weimei.com<br>
+                                <strong>市场:</strong> marketing@yujing-weimei.com<br>
+                                <strong>支持:</strong> support@yujing-weimei.com
+                            </p>
+                        </div>
+
+                        <div class="info-item">
+                            <h3>📱 电话</h3>
+                            <p>
+                                <strong>主线:</strong> +81-3-XXXX-XXXX<br>
+                                <strong>国际:</strong> +81-XX-XXXX-XXXX<br>
+                                <strong>传真:</strong> +81-3-XXXX-XXXX
+                            </p>
+                        </div>
+
+                        <div class="info-item">
+                            <h3>🕐 营业时间</h3>
+                            <p>
+                                <strong>周一至周五:</strong> 09:00 - 18:00<br>
+                                <strong>周六:</strong> 09:00 - 13:00<br>
+                                <strong>周日/节假日:</strong> 休息
+                            </p>
+                        </div>
+
+                        <div class="social-links">
+                            <h3>社交媒体</h3>
+                            <p>
+                                <a href="#" class="social-btn">Facebook</a>
+                                <a href="#" class="social-btn">Twitter</a>
+                                <a href="#" class="social-btn">LinkedIn</a>
+                                <a href="#" class="social-btn">WeChat</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 联系表单 -->
+                    <div class="contact-form-wrapper">
+                        <h2>发送消息</h2>
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">姓名 *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">电子邮件 *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">电话</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="company">公司名称</label>
+                                <input type="text" id="company" name="company">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">主题 *</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">-- 选择主题 --</option>
+                                    <option value="products">产品查询</option>
+                                    <option value="bulk">大批采购</option>
+                                    <option value="partnership">商务合作</option>
+                                    <option value="jobs">招聘信息</option>
+                                    <option value="support">技术支持</option>
+                                    <option value="other">其他</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">消息 *</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="checkbox">
+                                    <input type="checkbox" name="agree" required>
+                                    我同意隐私政策
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">发送消息</button>
+                            <p class="form-note" id="formNote" style="display: none;\"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 常见问题 -->
+        <section class="faq-section">
+            <div class="container">
+                <h2>常见问题</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <h3>❓ 配送需要多长时间？</h3>
+                        <p>根据目的地不同，通常需要 7-21 个工作日。详情请查询跟踪信息。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>❓ 支持哪些付款方式？</h3>
+                        <p>我们支持信用卡、银行转账、PayPal 等多种支付方式。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>❓ 产品保修期是多长？</h3>
+                        <p>大多数产品享受 1 年的质量保证。特定产品可能有不同的保修期。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>❓ 如何进行大批采购？</h3>
+                        <p>请联系我们的销售团队，获取专属的批发价格和定制服务。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>❓ 可以退货吗？</h3>
+                        <p>在收货后 30 天内，符合条件的产品可以退货或换货。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>❓ 提供订制服务吗？</h3>
+                        <p>是的，我们可以根据您的需求提供定制化的产品和服务。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>宇晶味美株式会社</h4>
+                    <p>日本商品全球贸易先驱</p>
+                </div>
+                <div class="footer-section">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a onclick="showPage('products')">产品</a></li>
+                        <li><a onclick="showPage('team')">团队</a></li>
+                        <li><a onclick="showPage('contact')">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>联系方式</h4>
+                    <p>电子邮件: info@yujing-weimei.com</p>
+                    <p>电话: +81-XX-XXXX-XXXX</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 宇晶味美株式会社. 版权所有。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ========== 汉堡菜单切换 ==========
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        if (hamburger) {
+            hamburger.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                hamburger.classList.toggle('active');
+            });
+        }
+
+        // 点击菜单项关闭菜单
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+
+        // ========== 页面切换 ==========
+        function showPage(pageId) {
+            // 隐藏所有页面
+            const pages = document.querySelectorAll('.page-content');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+
+            // 显示指定页面
+            const selectedPage = document.getElementById(pageId);
+            if (selectedPage) {
+                selectedPage.classList.add('active');
+            }
+
+            // 更新导航栏样式
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // 滚动到顶部
+            window.scrollTo(0, 0);
+        }
+
+        // ========== 联系表单提交 ==========
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // 获取表单数据
+                const formData = new FormData(this);
+                const data = {
+                    name: formData.get('name'),
+                    email: formData.get('email'),
+                    phone: formData.get('phone'),
+                    company: formData.get('company'),
+                    subject: formData.get('subject'),
+                    message: formData.get('message')
+                };
+                
+                console.log('表单数据:', data);
+                
+                // 显示成功消息
+                const formNote = document.getElementById('formNote');
+                formNote.textContent = '感谢您的消息！我们将尽快回复您。';
+                formNote.className = 'form-note success';
+                formNote.style.display = 'block';
+                
+                // 清空表单
+                contactForm.reset();
+                
+                // 3秒后隐藏消息
+                setTimeout(() => {
+                    formNote.style.display = 'none';
+                }, 3000);
+            });
+        }
+
+        // ========== 页面加载动画 ==========
+        window.addEventListener('load', function() {
+            // 添加加载完成类
+            document.body.style.opacity = '1';
+        });
+
+        console.log('宇晶味美株式会社官网加载完成！');
+    </script>
+</body>
+</html>
